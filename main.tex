@@ -34,7 +34,7 @@
 
 \reportsubtitle{A documentation for using the PERSIST framework to model and assess inland vessel traffic} % Report subtitle, include new lines if needed
 
-\reportauthors{Niklas Paulig\\Fabian Hart} % Report authors/group/department, include new lines if needed
+\reportauthors{Niklas Paulig\\Fabian Hart\\Ostap Okhrin} % Report authors/group/department, include new lines if needed
 
 \reportdate{\today} % Report date, include new lines for additional information if needed
 
@@ -111,9 +111,12 @@
 	
 	\begin{tabular}{@{} L{0.05\linewidth} L{0.15\linewidth} L{0.6\linewidth} @{}} % Column widths specified here, change as needed for your content
 		\toprule
-		v1.0.1 & 2022-06-20 & Enabled logging for the entire simulation process. The data of individual vessels will be logged into a separate file, located in the simlogs folder.\\
-		v1.0.2 & 2033-06-23 & Bug fixes.\\
+		v1.0.5 & 2023-03-06 & 
+		PERSIST now offers a shell entry point and can be invoked directly as: \verb|$ persist -c path/to/config.toml|\\
+		v1.0.4 & 2023-03-03 & Dependencies are now downloaded on install. Configuration file is now using the .toml format. Logger output, network weight files and river data now have configurable paths. Plotting modules are only imported if visualize = true in the configuration file. Added argument parser to invoke PERSIST via a python module call: python -m persist -c path/to/config.toml.\\
 		v1.0.3 & 2022-08-24 & Vessels are now modeled individually by a class. All ships share the same river object. Drivable area per vessel is pre-computed for a discrete range of squat values. Ship draught mandatory in configuration file.\\
+		v1.0.2 & 2033-06-23 & Bug fixes.\\
+		v1.0.1 & 2022-06-20 & Enabled logging for the entire simulation process. The data of individual vessels will be logged into a separate file, located in the simlogs folder.\\
 		\bottomrule
 	\end{tabular}
 \end{twothirdswidth}
