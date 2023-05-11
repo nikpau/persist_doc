@@ -85,7 +85,7 @@
 	
 	\subsection*{Disclaimer}
 
-	This documentation is provided "as is" and to the best of our knowledge, contains accurate and reliable information. However, it is important to note that this documentation is a work in progress and may not be complete or up-to-date. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the documentation or the information contained within it. Any reliance you place on this documentation is therefore strictly at your own risk. We reserve the right to make changes to this documentation at any time without prior notice.
+	This documentation is provided "as is" and to the best of our knowledge, contains accurate and reliable information. However, it is important to note that this documentation is a work in progress and may not be complete or up-to-date. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability for the documentation or the information contained within it. Any reliance you place on this documentation is therefore strictly at your own risk. We reserve the right to make changes to this documentation at any time without prior notice.
 	
 	\subsection*{Copyright}
 	
@@ -140,19 +140,19 @@
 
 \subsection{About PERSIST} % Top level section
 
-Traffic modeling is an important component for the safety and economical development of inland waterways. It enables investigating system behavior and development under static and dynamic environmental conditions, such as decline in water levels, changing number of traffic participants or changing behavior of individuals.
+Traffic modeling is an important component of the safety and economic development of inland waterways. It enables investigating system behavior and development under static and dynamic environmental conditions, such as a decline in water levels, changing number of traffic participants or changing behavior of individuals.
 
 As part of a research collaboration, a micro traffic simulation model (TSM) called Performant Simulation of Inland Ship Traffic (PERSIST) was developed. The model uses agents to control individual inland vessels, which were trained through a machine learning approach to select appropriate trajectories and make decisions on ship-ship interactions while considering hydraulic and traffic constraints. PERSIST provides an excellent foundation for advanced applications, including traffic forecasting and analysis related to shipping traffic automation. \sidenote{The mentioned applications are a non-exhaustive snapshot at the time of writing, as PERSIST is currently under development.}
 
-In short, PERSIST allows you run a traffic simulation by specifying a configuration file, which contains all relevant information about the simulation scenario, such as the number of vessels, their starting positions, desired powers, masses, dimensions, and the waterway. The simulation is then run for a specified number of time steps, and the resulting trajectories are stored in a log file. The log file can then be used to analyze the simulation results.
+In short, PERSIST allows you to run a traffic simulation by specifying a configuration file, which contains all relevant information about the simulation scenario, such as the number of vessels, their starting positions, desired powers, masses, dimensions, and the waterway. The simulation is then run for a specified number of time steps, and the resulting trajectories are stored in a log file. The log file can then be used to analyze the simulation results.
 
 \subsection{Structure of this documentation} % Second level section
 
-This documentation is intended to provide a comprehensive overview of the PERSIST framework, and is therefore split into two parts. 
+This documentation is intended to provide a comprehensive overview of the PERSIST framework and is therefore split into two parts. 
 
 Part one serves as a Practitioner's Guide, providing a detailed instruction manual on how to install and use the PERSIST framework and its functions. We will explain the functionality of the most important modules and provide examples on how to use, and adapt them.\sidenote{Most code examples in this documentation are written in Python, so a basic understanding of the language is required.} We will take a look at the configuration files and explain how to set up a simulation scenario. Finally, we will provide a detailed description of the output visualizations and logs and how to interpret them.
 
-Part two serves as a methodological reference, providing a detailed description of the underlying concepts and methods used in the PERSIST framework. We will explain the algorithmic foundation as well as the training and testing procedures for the machine learning models used in PERSIST.
+Part two serves as a methodological reference, providing a detailed description of the underlying concepts and methods used in the PERSIST framework. We will explain the algorithmic foundation, as well as the training and testing procedures for the machine learning models used in PERSIST.
 
 \section{Practitioner's Guide}
 
@@ -160,7 +160,7 @@ Part two serves as a methodological reference, providing a detailed description 
 
 \paragraph{Prerequisites}
 
-PERSIST is written in Python 3.9 and due to the use of type hinting with built-in types it currently does not support backwards compatibility. You can install the latest version of Python from the official website via this \href{https://www.python.org/downloads/}{link} \ExternalLink.
+PERSIST is written in Python 3.9 and due to the use of type hinting with built-in types it currently does not support backward compatibility. You can install the latest version of Python from the official website via this \href{https://www.python.org/downloads/}{link} \ExternalLink.
 
 After obtaining a working Python installation, you can obtain a copy of the PERSIST framework either from the official GitHub repository via this link... \ExternalLink or by downloading the latest release from the official website via this link... \ExternalLink.
 
@@ -293,7 +293,7 @@ The \verb|River| section contains information about the river that is to be simu
 	\label{fig:bpdgpw}
 \end{marginfigure}
 
-GPW (Grid Points per Width) specify how many grid points are used to discretize the width of the river. BPD (Base Point Distance) specifies the distance between two grid points in the horizontal and vertical irection (See Figure \ref{fig:bpdgpw} on the right). 
+GPW (Grid Points per Width) specify how many grid points are used to discretize the width of the river. BPD (Base Point Distance) specifies the distance between two grid points in the horizontal and vertical direction (See Figure \ref{fig:bpdgpw} on the right). 
 
 \begin{note}
 	For the simulation to work, the GPW and BPD values must match the values used to generate the river data file. If you are using one of the rivers that come with the PERSIST framework, you do not need to change these values.
