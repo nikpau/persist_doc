@@ -315,20 +315,20 @@ The \verb|x_locations| and \verb|y_locations| keys contain the starting position
 In the flat projection, the river starts at the origin and flows downstream for increasing x values.
 
 
-The \verb|overtaking_levels| key contains the overtaking levels of the vessels. A vessel can and will only overtake vessel with overtaking levels that are lower than its own. For example, a vessel with an overtaking level of 2 will overtake vessels with overtaking levels of 1 and 0, but not vessels with overtaking levels of 2 or higher. An overtaking level of 0 is equivalent to not overtaking at all.
+The \verb|overtaking_levels| key contains the overtaking levels of the vessels. A vessel can and will only overtake a vessel with overtaking levels that are lower than its own. For example, a vessel with an overtaking level of 2 will overtake vessels with overtaking levels of 1 and 0, but not vessels with overtaking levels of 2 or higher. An overtaking level of 0 is equivalent to not overtaking at all.
 
 
-The \verb|directions| key contains the directions in which the vessels are to be simulated. A value of 1 means that the vessel will advance downstream, and a value of -1 means that the vessel will advance upsteam. 
+The \verb|directions| key contains the directions in which the vessels are to be simulated. A value of 1 means that the vessel will advance downstream, and a value of -1 means that the vessel will advance upstream. 
 
 
-The \verb|desired_powers| key contains the desired powers of the vessels in watts. The maximum power of the vessel depends on the type of vessel simulated. Currently only a single vessel type (Europaschiff 100x10m) can be simulated, which has a maximum power of 1,000,000 watts. \sidenote{For future versions, this specification may be replaced by directly specifying the vessel type.}
+The \verb|desired_powers| key contains the desired powers of the vessels in watts. The maximum power of the vessel depends on the type of vessel simulated. Currently, only a single vessel type (Europaschiff 100x10m) can be simulated, which has a maximum power of 1,000,000 watts. \sidenote{For future versions, this specification may be replaced by directly specifying the vessel type.}
 
 \paragraph{[Visualization]}
 
 The \verb|Visualization| section contains information about the visualization of the simulation. 
 
 \begin{note}
-	Due to its implementation in \emph{matplotlib}, the visualization module of PERSIST is very slow and thus intended to be a visual debugging tool only. Logging is  disabled when the visualization is enabled.
+	Due to its implementation in \emph{matplotlib}, the visualization module of PERSIST is very slow and thus intended to be a visual debugging tool only. Logging is disabled when the visualization is enabled.
 \end{note}
 
 The \verb|visualize| key specifies whether the simulation should be visualized or not. 
@@ -351,7 +351,7 @@ The \verb|zoom| key specifies the zoom level of the visualization in meters of r
 
 The \verb|Simulation| section contains information about the simulation itself.
 
-The \verb|speed_up| key specifies the speed up factor of the simulation. A value of 1 means that the positions of the vessels are updated once per second. A value of 2 means that the positions of the vessels are updated every two seconds, and so on.
+The \verb|speed_up| key specifies the speed-up factor of the simulation. A value of 1 means that the positions of the vessels are updated once per second. A value of 2 means that the positions of the vessels are updated every two seconds, and so on.
 
 The \verb|n_iters| key specifies the number of iterations that the simulation should run for.\sidenote{Currently, there is no option for the simulation to run in sandbox mode (indefinitely), as vessels leaving the river are not yet handled.}
 
@@ -363,7 +363,7 @@ The \verb|river_path| key specifies the path to the river data folder. This is a
 
 The \verb|onnx_path| key specifies the path to the exported neural network model. Unless you retrained the neural networks and saved them to a different location, you do not need to change this value.
 
-The \verb|logging_root| key decides where all the logfiles of this configuration will be saved to. If the folder does not exist, it will be created. The logfiles will be saved in a subfolder named after the current date, time and number of vessels simulated. This will be discussed in more detail in Section ....
+The \verb|logging_root| key decides where all the log files of this configuration will be saved to. If the folder does not exist, it will be created. The log files will be saved in a subfolder named after the current date, time and number of vessels simulated. This will be discussed in more detail in Section ....
 
 \subsection{Logging}
 
@@ -374,13 +374,13 @@ PERSIST features a comprehensive logging system for every stage of the simulatio
 	The logging folder will be named \verb|YYYY-MM-DD-HHMMSS_rivername_nvessels|
 \end{note}
 
-Inside this folder, a logfile will be created for every vessel simulated. The logfile contains information about the position, speed, power, and overtaking level of the vessel at each time step. The logfiles are saved in the \verb|csv| format, which can be opened in any spreadsheet software such as Microsoft Excel or LibreOffice Calc.
+Inside this folder, a log file will be created for every vessel simulated. The log file contains information about the position, speed, power, and overtaking level of the vessel at each time step. The logfiles are saved in the \verb|csv| format, which can be opened in any spreadsheet software such as Microsoft Excel or LibreOffice Calc.
 
-Additionally to the vessel logfiles, a copy of the configuration file, and all print outs to \verb|stdout| (saved in \verb|run.log|) will be saved in the logging folder. 
+Additionally to the vessel log files, a copy of the configuration file, and all printouts to \verb|stdout| (saved in \verb|run.log|) will be saved in the logging folder. 
 
 \paragraph{Graphical logging}
 
-For every completed simulation, PERSIST will generate a summary graph of the simulation. This graph contains a visual representation of the speeds, locations and overtaking levels of all vessels over the course of the simulation.
+For every completed simulation, PERSIST will generate a summary graph of the simulation. This graph contains a visual representation of the speeds, locations and overtaking levels of all vessels throughout the simulation.
 \begin{marginfigure}
 	\includegraphics[width=\linewidth]{img/summary.pdf}
 	\caption{Graphical logging example.}
@@ -410,7 +410,7 @@ If you want to run a demo simulation you call call PERSIST with the \verb|--demo
 \end{lstlisting}
 
 \begin{note}
-	Due to the lack of testing facilites, the calling of PERSIST as a self-contained script could not be tested on Windows machines. If you encounter any problems, please try running PERSIST as a Python module instead. Call it via:
+	Due to the lack of testing facilities, the calling of PERSIST as a self-contained script could not be tested on Windows machines. If you encounter any problems, please try running PERSIST as a Python module instead. Call it via:
 	\begin{lstlisting}[language=bash]
 	$ python -m persist -c <config_file>
 	\end{lstlisting}
